@@ -54,7 +54,7 @@ abstract class CreateEntry(name: String) extends Command {
     val allDirsInPath = workingDir.getAllFoldersInPath
 
     // 2- create new directory entry in the working directory
-    val newEntry: DirEntry = createSpecificEntry(state, name)
+    val newEntry: DirEntry = createSpecificEntry(state)
 
     // 3- update the whole directory structure starting from the root
     // (the directory structure is IMMUTABLE)
@@ -67,5 +67,5 @@ abstract class CreateEntry(name: String) extends Command {
 
   }
 
-  def createSpecificEntry(state: State, entryName: String): DirEntry
+  def createSpecificEntry(state: State): DirEntry
 }
